@@ -11,7 +11,11 @@ module.exports = function (app) {
     if(!exists) {
       db.schema.createTable(tableName, table => {
         table.increments('id');
-        table.string('text');
+        table.string('product name');
+        table.integer('price');
+        table.string('unit');
+        table.string('bank sampah name');
+        table.date('last update');
       })
         .then(() => console.log(`Created ${tableName} table`))
         .catch(e => console.error(`Error creating ${tableName} table`, e));
